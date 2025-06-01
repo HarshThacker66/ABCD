@@ -1,0 +1,282 @@
+{% extends "base.html" %}
+
+{% block title %}Hotel Hakaji - Authentic Indian Hospitality in Bhuj, Kachchh{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="display-1 fw-bold">Hotel Hakaji</h1>
+                <p class="lead">Experience Authentic Indian Hospitality</p>
+                <div class="hero-buttons">
+                    <a href="{{ url_for('rooms') }}" class="btn btn-primary btn-lg me-3">
+                        <i class="fas fa-bed"></i> Book a Room
+                    </a>
+                    <a href="{{ url_for('menu') }}" class="btn btn-outline-primary btn-lg">
+                        <i class="fas fa-utensils"></i> View Menu
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Welcome Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h2 class="display-4 text-secondary mb-4">Welcome to Hotel Hakaji</h2>
+                <p class="lead mb-4">
+                    Nestled in the heart of Bhuj, Kachchh, Hotel Hakaji offers a perfect blend of traditional Indian hospitality and modern comfort. Experience the rich cultural heritage of Gujarat while enjoying world-class amenities.
+                </p>
+                <div class="row">
+                    <div class="col-sm-6 mb-3">
+                        <div class="d-flex">
+                            <i class="fas fa-star text-primary fa-2x me-3"></i>
+                            <div>
+                                <h5>Premium Service</h5>
+                                <p class="mb-0">24/7 concierge and room service</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 mb-3">
+                        <div class="d-flex">
+                            <i class="fas fa-utensils text-primary fa-2x me-3"></i>
+                            <div>
+                                <h5>Authentic Cuisine</h5>
+                                <p class="mb-0">Traditional Gujarati and Indian dishes</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 mb-3">
+                        <div class="d-flex">
+                            <i class="fas fa-wifi text-primary fa-2x me-3"></i>
+                            <div>
+                                <h5>Modern Amenities</h5>
+                                <p class="mb-0">Free WiFi, AC, and premium facilities</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 mb-3">
+                        <div class="d-flex">
+                            <i class="fas fa-map-marker-alt text-primary fa-2x me-3"></i>
+                            <div>
+                                <h5>Prime Location</h5>
+                                <p class="mb-0">Near Aiya Nagar, Mundra Road</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="https://pixabay.com/get/gb90aeeebda397d99af737bedf7345a6597edbf11bef94bde3a47e1ce60a38f839af555074f155ed2278f99dd4923c834579cf91fccb7e94bd1dc9bbe91acc989_1280.jpg" 
+                     alt="Hotel Hakaji Reception" 
+                     class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Rooms -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 text-secondary">Our Featured Rooms</h2>
+            <p class="lead">Choose from our selection of comfortable and luxurious accommodations</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img src="https://pixabay.com/get/g37df67bd87a4737a280516153064c174ad1090c49a9762a9094675c6cc08c6c0630fdff775b887d09c96252ec8d022e4dfd3d33cb4d980697c00af0f0f82e700_1280.jpg" 
+                         class="card-img-top" alt="Deluxe Room">
+                    <div class="card-body">
+                        <h5 class="card-title">Deluxe Room</h5>
+                        <p class="card-text">Spacious and comfortable room with modern amenities and traditional decor.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="h5 text-primary mb-0">₹3,500/night</span>
+                            <a href="{{ url_for('rooms') }}" class="btn btn-outline-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img src="https://pixabay.com/get/g3170a02bef0ddf28e94e899e6cb967cf0e9bc5e1f1279b5af945bfa90de0f408bda35f9bf5f6e6a5c3c7fb08b021a1052f3e658fde743cc35868536e6a69ca9a_1280.jpg" 
+                         class="card-img-top" alt="Suite Room">
+                    <div class="card-body">
+                        <h5 class="card-title">Suite Room</h5>
+                        <p class="card-text">Luxurious suite with separate living area and premium amenities.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="h5 text-primary mb-0">₹5,500/night</span>
+                            <a href="{{ url_for('rooms') }}" class="btn btn-outline-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img src="https://pixabay.com/get/g729eef972f8278900b61972d26bfed6ff9f8b1c4d6f15b5c30ad774ca1543c3c80dbeba587bc40573c0e36be931ba0bfc77a75224e77c6eb98210722004526df_1280.jpg" 
+                         class="card-img-top" alt="Family Room">
+                    <div class="card-body">
+                        <h5 class="card-title">Family Room</h5>
+                        <p class="card-text">Perfect for families with children, spacious and child-friendly.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="h5 text-primary mb-0">₹4,500/night</span>
+                            <a href="{{ url_for('rooms') }}" class="btn btn-outline-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-4">
+            <a href="{{ url_for('rooms') }}" class="btn btn-primary btn-lg">
+                <i class="fas fa-bed"></i> View All Rooms
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Popular Dishes -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 text-secondary">Popular Dishes</h2>
+            <p class="lead">Taste the authentic flavors of Gujarat and India</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img src="https://pixabay.com/get/g6b4098552985a4254e1f477040cb00b58ebbcec2c31be6f2d236ef40f4b0b1bf51646b690628a922c8ef4467dce9b0cf74404619fe8d038bcd0b43066ce90d0a_1280.jpg" 
+                         class="card-img-top" alt="Dal Bati Churma">
+                    <div class="card-body">
+                        <h6 class="card-title">Dal Bati Churma</h6>
+                        <p class="card-text small">Traditional Rajasthani delicacy</p>
+                        <span class="text-primary fw-bold">₹280</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img src="https://pixabay.com/get/g7ba3235f178a90fffa504366e0ccda5092ebe48199c9c06d5029f8c2d251cfb6bcecd59f7ebcb3ad527d10164a2acdbfe31bae2640083e6f5744cde6ffbb4315_1280.jpg" 
+                         class="card-img-top" alt="Gujarati Thali">
+                    <div class="card-body">
+                        <h6 class="card-title">Gujarati Thali</h6>
+                        <p class="card-text small">Complete traditional meal</p>
+                        <span class="text-primary fw-bold">₹320</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img src="https://pixabay.com/get/gae88a3247261f322d1d4fbc52926d42ee5d6aaecbd46d59dccacef20149046a323a2ef339b32faaf16a58c0e3c238ae221e1f8fa7a439a46b0ce6a252ff9632a_1280.jpg" 
+                         class="card-img-top" alt="Biryani">
+                    <div class="card-body">
+                        <h6 class="card-title">Hyderabadi Biryani</h6>
+                        <p class="card-text small">Aromatic rice with tender meat</p>
+                        <span class="text-primary fw-bold">₹380</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img src="https://pixabay.com/get/gbc827cfb024dbe195c0dac314fa098b17511422bca382e9310a68dadf9c5879e518367d4c3b0a1ce3a5ac5f7e958fbcb1f26335894477276de41574686a17f39_1280.jpg" 
+                         class="card-img-top" alt="Butter Chicken">
+                    <div class="card-body">
+                        <h6 class="card-title">Butter Chicken</h6>
+                        <p class="card-text small">Creamy tomato curry</p>
+                        <span class="text-primary fw-bold">₹350</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-4">
+            <a href="{{ url_for('menu') }}" class="btn btn-primary btn-lg">
+                <i class="fas fa-utensils"></i> View Full Menu
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Hotel Amenities -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 text-secondary">Hotel Amenities</h2>
+            <p class="lead">Everything you need for a comfortable stay</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="text-center">
+                    <img src="https://pixabay.com/get/gb30094c56136d449bae1699132ee5c72f0df336b572e995439f5b34234d377720f9703ce8d2df5fac0b49da767ae3e389af3075cf29142a26bf08cb0e3bf4934_1280.jpg" 
+                         class="img-fluid rounded mb-3" alt="Swimming Pool" style="height: 200px; object-fit: cover;">
+                    <h5>Swimming Pool</h5>
+                    <p>Refreshing outdoor pool with poolside service</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="text-center">
+                    <img src="https://pixabay.com/get/gbf5ca61407163fb2985deb36d2dfdf48de71f9c743cd55227603a939e4347b1dba5b3bb795cc055e8338125403179b413616ce355a668c9966286bbd9f5e1578_1280.jpg" 
+                         class="img-fluid rounded mb-3" alt="Fitness Center" style="height: 200px; object-fit: cover;">
+                    <h5>Fitness Center</h5>
+                    <p>Modern gym with state-of-the-art equipment</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="text-center">
+                    <img src="https://pixabay.com/get/g62b2501b0e4028742fbfd7270c12973b946757731cbb123f3a593875960c0ff147a39e100cf51c91c38fe4b93681389c88e4c489a1c173dcd18838f8d190381c_1280.jpg" 
+                         class="img-fluid rounded mb-3" alt="Kids Play Area" style="height: 200px; object-fit: cover;">
+                    <h5>Kids Play Area</h5>
+                    <p>Safe and fun environment for children</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="text-center">
+                    <img src="https://pixabay.com/get/g4b379874292a75a85d929cd57df80d56990d5c10cc93ecc72a953d947ec3941075f6eaf34cbe25cde7ada5f4fcd4d95da49acb8915ab221df5bf32eced66238f_1280.jpg" 
+                         class="img-fluid rounded mb-3" alt="Spa & Wellness" style="height: 200px; object-fit: cover;">
+                    <h5>Spa & Wellness</h5>
+                    <p>Relaxing treatments and therapies</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-4">
+            <a href="{{ url_for('gallery') }}" class="btn btn-primary btn-lg">
+                <i class="fas fa-images"></i> View Gallery
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-5 bg-primary text-white">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h3>Ready to Experience Hotel Hakaji?</h3>
+                <p class="lead mb-0">Book your stay today and discover the warmth of Indian hospitality</p>
+            </div>
+            <div class="col-lg-4 text-end">
+                <a href="{{ url_for('rooms') }}" class="btn btn-light btn-lg">
+                    <i class="fas fa-calendar-check"></i> Book Now
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,250 @@
+{% extends "base.html" %}
+
+{% block title %}Gallery - Hotel Hakaji{% endblock %}
+
+{% block content %}
+<div style="margin-top: 80px;"></div>
+
+<!-- Gallery Header -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center">
+            <h1 class="display-4 text-secondary mb-3">Photo Gallery</h1>
+            <p class="lead">Explore our beautiful hotel facilities and amenities</p>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Filters -->
+<section class="py-4">
+    <div class="container">
+        <div class="text-center">
+            <div id="gallery-filters" class="btn-group flex-wrap" role="group">
+                <!-- Filter buttons will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Grid -->
+<section class="py-5">
+    <div class="container">
+        <div class="gallery-grid" id="gallery-container">
+            <!-- Gallery images will be populated by JavaScript -->
+        </div>
+    </div>
+</section>
+
+<!-- Virtual Tour Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 text-secondary">Virtual Tour</h2>
+            <p class="lead">Take a virtual walk through Hotel Hakaji</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img src="https://pixabay.com/get/g15c3aa8c5509961797b14c45f2c88fa2093c5059a2fd003888f0bc8432001a17320582a92cddbaa39c13dc5878c0b42fd20a1e04107d26277c6bd6325c0f1cd9_1280.jpg" 
+                         class="card-img-top" alt="Lobby Tour">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Lobby & Reception</h5>
+                        <p class="card-text">Experience our grand lobby with traditional Indian architecture</p>
+                        <button class="btn btn-primary" onclick="startVirtualTour('lobby')">
+                            <i class="fas fa-play"></i> Start Tour
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img src="https://pixabay.com/get/g37df67bd87a4737a280516153064c174ad1090c49a9762a9094675c6cc08c6c0630fdff775b887d09c96252ec8d022e4dfd3d33cb4d980697c00af0f0f82e700_1280.jpg" 
+                         class="card-img-top" alt="Rooms Tour">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Guest Rooms</h5>
+                        <p class="card-text">Tour our comfortable and well-appointed guest rooms</p>
+                        <button class="btn btn-primary" onclick="startVirtualTour('rooms')">
+                            <i class="fas fa-play"></i> Start Tour
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img src="https://pixabay.com/get/gb30094c56136d449bae1699132ee5c72f0df336b572e995439f5b34234d377720f9703ce8d2df5fac0b49da767ae3e389af3075cf29142a26bf08cb0e3bf4934_1280.jpg" 
+                         class="card-img-top" alt="Amenities Tour">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Amenities</h5>
+                        <p class="card-text">Explore our pool, gym, and recreational facilities</p>
+                        <button class="btn btn-primary" onclick="startVirtualTour('amenities')">
+                            <i class="fas fa-play"></i> Start Tour
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Photo Upload Section (for guests) -->
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">
+                            <i class="fas fa-camera"></i> Share Your Experience
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="text-muted mb-4">
+                            Have photos from your stay? We'd love to see them! Share your memories with fellow travelers.
+                        </p>
+                        
+                        <form id="photoUploadForm">
+                            <div class="mb-3">
+                                <label for="guestName" class="form-label">Your Name</label>
+                                <input type="text" class="form-control" id="guestName" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="photoCaption" class="form-label">Photo Caption</label>
+                                <input type="text" class="form-control" id="photoCaption" 
+                                       placeholder="Describe your photo..." required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="photoFile" class="form-label">Upload Photo</label>
+                                <input type="file" class="form-control" id="photoFile" 
+                                       accept="image/*" onchange="previewPhoto(event)">
+                                <small class="text-muted">Maximum file size: 5MB. Formats: JPG, PNG, GIF</small>
+                            </div>
+                            
+                            <div class="mb-3" id="photoPreview" style="display: none;">
+                                <img id="previewImage" class="img-fluid rounded" style="max-height: 200px;">
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary" onclick="submitPhoto(event)">
+                                <i class="fas fa-upload"></i> Share Photo
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Download Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center">
+            <h3 class="mb-4">Download High-Quality Images</h3>
+            <p class="lead mb-4">Perfect for travel blogs, social media, or personal memories</p>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-outline-primary" onclick="downloadGalleryPack('lobby')">
+                            <i class="fas fa-download"></i> Download Lobby Photos (ZIP)
+                        </button>
+                        <button class="btn btn-outline-primary" onclick="downloadGalleryPack('rooms')">
+                            <i class="fas fa-download"></i> Download Room Photos (ZIP)
+                        </button>
+                        <button class="btn btn-outline-primary" onclick="downloadGalleryPack('amenities')">
+                            <i class="fas fa-download"></i> Download Amenities Photos (ZIP)
+                        </button>
+                        <button class="btn btn-primary" onclick="downloadGalleryPack('all')">
+                            <i class="fas fa-download"></i> Download Complete Gallery (ZIP)
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-4">
+                <small class="text-muted">
+                    <i class="fas fa-info-circle"></i>
+                    Images are provided for personal use only. Commercial use requires permission.
+                </small>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+function startVirtualTour(area) {
+    // Simulate virtual tour (in a real implementation, this would integrate with a VR/360° tour platform)
+    const tourData = {
+        lobby: "Experience our grand lobby with traditional Gujarati architecture and warm hospitality.",
+        rooms: "Explore our comfortable rooms with modern amenities and traditional decor.",
+        amenities: "Discover our recreational facilities including pool, gym, and wellness center."
+    };
+    
+    showNotification(`Starting virtual tour: ${tourData[area]}`, 'info');
+    
+    // In a real implementation, this would open a 360° tour viewer
+    setTimeout(() => {
+        alert(`Virtual tour of ${area} would open here. This feature would integrate with platforms like Matterport or custom 360° viewers.`);
+    }, 1000);
+}
+
+function previewPhoto(event) {
+    const file = event.target.files[0];
+    if (file) {
+        if (file.size > 5 * 1024 * 1024) { // 5MB limit
+            showNotification('File size too large. Please choose a file smaller than 5MB.', 'error');
+            event.target.value = '';
+            return;
+        }
+        
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('previewImage').src = e.target.result;
+            document.getElementById('photoPreview').style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+    }
+}
+
+function submitPhoto(event) {
+    event.preventDefault();
+    
+    const name = document.getElementById('guestName').value;
+    const caption = document.getElementById('photoCaption').value;
+    const file = document.getElementById('photoFile').files[0];
+    
+    if (!name || !caption || !file) {
+        showNotification('Please fill in all fields and select a photo.', 'error');
+        return;
+    }
+    
+    // Simulate photo submission
+    showNotification('Thank you for sharing your photo! It will be reviewed and added to our gallery.', 'success');
+    
+    // Reset form
+    document.getElementById('photoUploadForm').reset();
+    document.getElementById('photoPreview').style.display = 'none';
+}
+
+function downloadGalleryPack(category) {
+    // Simulate download preparation
+    showNotification('Preparing download... This may take a few moments.', 'info');
+    
+    setTimeout(() => {
+        showNotification(`${category === 'all' ? 'Complete gallery' : category} photos would be downloaded as a ZIP file.`, 'success');
+        // In a real implementation, this would trigger an actual download
+    }, 2000);
+}
+
+// Initialize gallery when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    if (typeof initializeGallery === 'function') {
+        initializeGallery();
+    }
+});
+</script>
+{% endblock %}
