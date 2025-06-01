@@ -1,0 +1,221 @@
+{% extends "base.html" %}
+
+{% block title %}Rooms & Booking - Hotel Hakaji{% endblock %}
+
+{% block content %}
+<div style="margin-top: 80px;"></div>
+
+<!-- Rooms Header -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center">
+            <h1 class="display-4 text-secondary mb-3">Our Rooms</h1>
+            <p class="lead">Comfortable accommodations designed for your perfect stay</p>
+        </div>
+    </div>
+</section>
+
+<!-- Booking Form -->
+<section class="py-4 bg-primary text-white">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card bg-white text-dark">
+                    <div class="card-body">
+                        <h5 class="card-title text-center mb-4">Quick Booking</h5>
+                        <form class="row g-3">
+                            <div class="col-md-3">
+                                <label for="checkIn" class="form-label">Check-in Date</label>
+                                <input type="date" class="form-control" id="checkIn" required>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="checkOut" class="form-label">Check-out Date</label>
+                                <input type="date" class="form-control" id="checkOut" required>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="guests" class="form-label">Guests</label>
+                                <select class="form-control" id="guests" required>
+                                    <option value="1">1 Guest</option>
+                                    <option value="2">2 Guests</option>
+                                    <option value="3">3 Guests</option>
+                                    <option value="4">4 Guests</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 d-flex align-items-end">
+                                <button type="button" class="btn btn-primary w-100" onclick="filterRoomsByCapacity()">
+                                    <i class="fas fa-search"></i> Check Availability
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Rooms Grid -->
+<section class="py-5">
+    <div class="container">
+        <div class="row" id="rooms-container">
+            <!-- Rooms will be populated by JavaScript -->
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 text-secondary">Room Features</h2>
+            <p class="lead">All rooms come with these standard amenities</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="text-center">
+                    <i class="fas fa-wifi fa-3x text-primary mb-3"></i>
+                    <h5>Free WiFi</h5>
+                    <p>High-speed internet access throughout the hotel</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="text-center">
+                    <i class="fas fa-snowflake fa-3x text-primary mb-3"></i>
+                    <h5>Air Conditioning</h5>
+                    <p>Climate control for your comfort</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="text-center">
+                    <i class="fas fa-concierge-bell fa-3x text-primary mb-3"></i>
+                    <h5>Room Service</h5>
+                    <p>24/7 room service for your convenience</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="text-center">
+                    <i class="fas fa-tv fa-3x text-primary mb-3"></i>
+                    <h5>Entertainment</h5>
+                    <p>Cable TV with premium channels</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="text-center">
+                    <i class="fas fa-car fa-3x text-primary mb-3"></i>
+                    <h5>Free Parking</h5>
+                    <p>Complimentary parking for all guests</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="text-center">
+                    <i class="fas fa-swimming-pool fa-3x text-primary mb-3"></i>
+                    <h5>Pool Access</h5>
+                    <p>Access to swimming pool and fitness center</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="text-center">
+                    <i class="fas fa-utensils fa-3x text-primary mb-3"></i>
+                    <h5>Restaurant</h5>
+                    <p>On-site restaurant with authentic cuisine</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="text-center">
+                    <i class="fas fa-shield-alt fa-3x text-primary mb-3"></i>
+                    <h5>Security</h5>
+                    <p>24/7 security and safety measures</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Policies Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">
+                            <i class="fas fa-info-circle"></i> Booking Policies
+                        </h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check text-success"></i> Check-in: 2:00 PM</li>
+                            <li class="mb-2"><i class="fas fa-check text-success"></i> Check-out: 12:00 PM</li>
+                            <li class="mb-2"><i class="fas fa-check text-success"></i> Early check-in subject to availability</li>
+                            <li class="mb-2"><i class="fas fa-check text-success"></i> Late check-out available (charges apply)</li>
+                            <li class="mb-2"><i class="fas fa-check text-success"></i> Valid ID required at check-in</li>
+                            <li class="mb-2"><i class="fas fa-check text-success"></i> Minimum age for check-in: 18 years</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">
+                            <i class="fas fa-ban"></i> Cancellation Policy
+                        </h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-info text-info"></i> Free cancellation up to 24 hours before check-in</li>
+                            <li class="mb-2"><i class="fas fa-info text-info"></i> 50% charge for cancellations within 24 hours</li>
+                            <li class="mb-2"><i class="fas fa-info text-info"></i> No refund for no-shows</li>
+                            <li class="mb-2"><i class="fas fa-info text-info"></i> Group bookings have different policies</li>
+                            <li class="mb-2"><i class="fas fa-info text-info"></i> Modifications subject to availability</li>
+                            <li class="mb-2"><i class="fas fa-info text-info"></i> Contact us for special circumstances</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+function filterRoomsByCapacity() {
+    const guests = parseInt(document.getElementById('guests').value);
+    const checkIn = document.getElementById('checkIn').value;
+    const checkOut = document.getElementById('checkOut').value;
+    
+    if (!checkIn || !checkOut) {
+        showNotification('Please select check-in and check-out dates.', 'error');
+        return;
+    }
+    
+    const checkInDate = new Date(checkIn);
+    const checkOutDate = new Date(checkOut);
+    
+    if (checkOutDate <= checkInDate) {
+        showNotification('Check-out date must be after check-in date.', 'error');
+        return;
+    }
+    
+    // Filter and highlight suitable rooms
+    const roomCards = document.querySelectorAll('.room-card');
+    roomCards.forEach(card => {
+        const maxGuests = parseInt(card.dataset.maxGuests);
+        if (maxGuests >= guests) {
+            card.style.border = '3px solid #D4A574';
+            card.style.boxShadow = '0 0 20px rgba(212, 165, 116, 0.3)';
+        } else {
+            card.style.border = '1px solid #E5E7EB';
+            card.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+            card.style.opacity = '0.7';
+        }
+    });
+    
+    showNotification(`Rooms suitable for ${guests} guest${guests > 1 ? 's' : ''} are highlighted.`, 'success');
+}
+</script>
+{% endblock %}
