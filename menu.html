@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Hotel Hakaji</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-hotel"></i> Hotel Hakaji
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="menu.html">
+                            <i class="fas fa-utensils"></i> Menu
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rooms.html">
+                            <i class="fas fa-bed"></i> Rooms
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">
+                            <i class="fas fa-images"></i> Gallery
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="reviews.html">
+                            <i class="fas fa-star"></i> Reviews
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            <i class="fas fa-info-circle"></i> About
+                        </a>
+                    </li>
+                </ul>
+                
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link position-relative" href="cart.html">
+                            <i class="fas fa-shopping-cart"></i> Cart
+                            <span class="badge bg-danger rounded-pill position-absolute top-0 start-100 translate-middle" id="cart-count" style="display: none;">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div style="margin-top: 80px;"></div>
+
+    <!-- Menu Header -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center">
+                <h1 class="display-4 text-secondary mb-3">Our Menu</h1>
+                <p class="lead">Authentic vegetarian Indian cuisine prepared with love and traditional recipes</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Categories -->
+    <section class="py-5">
+        <div class="container">
+            <!-- Menu Navigation -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="text-center">
+                        <div class="btn-group flex-wrap" role="group">
+                            <button type="button" class="btn btn-outline-primary active" onclick="filterMenu('all')">All Items</button>
+                            <button type="button" class="btn btn-outline-primary" onclick="filterMenu('starters')">Starters</button>
+                            <button type="button" class="btn btn-outline-primary" onclick="filterMenu('mains')">Main Courses</button>
+                            <button type="button" class="btn btn-outline-primary" onclick="filterMenu('desserts')">Desserts</button>
+                            <button type="button" class="btn btn-outline-primary" onclick="filterMenu('beverages')">Beverages</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menu Items -->
+            <div id="menu-container">
+                <!-- Starters -->
+                <div class="menu-category" data-category="starters">
+                    <h3 class="text-secondary mb-4"><i class="fas fa-seedling"></i> Starters</h3>
+                    <div class="row">
+                        <div class="col-lg-6 mb-4">
+                            <div class="menu-item">
+                                <div class="row align-items-center">
+                                    <div class="col-4">
+                                        <img src="https://pixabay.com/get/g7ba3235f178a90fffa504366e0ccda5092ebe48199c9c06d5029f8c2d251cfb6bcecd59f7ebcb3ad527d10164a2acdbfe31bae2640083e6f5744cde6ffbb4315_1280.jpg" 
+                                             class="img-fluid rounded" alt="Paneer Tikka">
+                                    </div>
+                                    <div class="col-8">
+                                        <h5>Paneer Tikka</h5>
+                                        <p class="text-muted small">Grilled cottage cheese marinated in aromatic spices</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="price">₹220</span>
+                                            <button class="btn btn-sm btn-primary" onclick="addToCart({
+                                                id: 'paneer-tikka',
+                                                type: 'food',
+                                                name: 'Paneer Tikka',
+                                                price: 220,
+                                                image: 'https://pixabay.com/get/g7ba3235f178a90fffa504366e0ccda5092ebe48199c9c06d5029f8c2d251cfb6bcecd59f7ebcb3ad527d10164a2acdbfe31bae2640083e6f5744cde6ffbb4315_1280.jpg'
+                                            })">
+                                                <i class="fas fa-plus"></i> Add
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-6 mb-4">
+                            <div class="menu-item">
+                                <div class="row align-items-center">
+                                    <div class="col-4">
+                                        <img src="https://pixabay.com/get/g453a5239fd9bceb21c8ab46271b5200e44f9a61633fb8686d9026e750b97ec9807074d4b8bcf6f27deca6cf0ffda6ecb1bf316bae3a7f89b994febc3a07aa764_1280.jpg" 
+                                             class="img-fluid rounded" alt="Hara Bhara Kabab">
+                                    </div>
+                                    <div class="col-8">
+                                        <h5>Hara Bhara Kabab</h5>
+                                        <p class="text-muted small">Green vegetable patties with spinach and herbs</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="price">₹180</span>
+                                            <button class="btn btn-sm btn-primary" onclick="addToCart({
+                                                id: 'hara-bhara-kabab',
+                                                type: 'food',
+                                                name: 'Hara Bhara Kabab',
+                                                price: 180,
+                                                image: 'https://pixabay.com/get/g453a5239fd9bceb21c8ab46271b5200e44f9a61633fb8686d9026e750b97ec9807074d4b8bcf6f27deca6cf0ffda6ecb1bf316bae3a7f89b994febc3a07aa764_1280.jpg'
+                                            })">
+                                                <i class="fas fa-plus"></i> Add
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-6 mb-4">
+                            <div class="menu-item">
+                                <div class="row align-items-center">
+                                    <div class="col-4">
+                                        <img src="https://pixabay.com/get/g6b4098552985a4254e1f477040cb00b58ebbcec2c31be6f2d236ef40f4b0b1bf51646b690628a922c8ef4467dce9b0cf74404619fe8d038bcd0b43066ce90d0a_1280.jpg" 
+                                             class="img-fluid rounded" alt="Veg Manchurian">
+                                    </div>
+                                    <div class="col-8">
+                                        <h5>Veg Manchurian</h5>
+                                        <p class="text-muted small">Indo-Chinese vegetable balls in tangy sauce</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="price">₹160</span>
+                                            <button class="btn btn-sm btn-primary" onclick="addToCart({
+                                                id: 'veg-manchurian',
+                                                type: 'food',
+                                                name: 'Veg Manchurian',
+                                                price: 160,
+                                                image: 'https://pixabay.com/get/g6b4098552985a4254e1f477040cb00b58ebbcec2c31be6f2d236ef40f4b0b1bf51646b690628a922c8ef4467dce9b0cf74404619fe8d038bcd0b43066ce90d0a_1280.jpg'
+                                            })">
+                                                <i class="fas fa-plus"></i> Add
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-6 mb-4">
+                            <div class="menu-item">
+                                <div class="row align-items-center">
+                                    <div class="col-4">
+                                        <img src="https://pixabay.com/get/gae88a3247261f322d1d4fbc52926d42ee5d6aaecbd46d59dccacef20149046a323a2ef339b32faaf16a58c0e3c238ae221e1f8fa7a439a46b0ce6a252ff9632a_1280.jpg" 
+                                             class="img-fluid rounded" alt="Spring Rolls">
+                                    </div>
+                                    <div class="col-8">
+                                        <h5>Vegetable Spring Rolls</h5>
+                                        <p class="text-muted small">Crispy rolls filled with fresh vegetables</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="price">₹140</span>
+                                            <button class="btn btn-sm btn-primary" onclick="addToCart({
+                                                id: 'spring-rolls',
+                                                type: 'food',
+                                                name: 'Vegetable Spring Rolls',
+                                                price: 140,
+                                                image: 'https://pixabay.com/get/gae88a3247261f322d1d4fbc52926d42ee5d6aaecbd46d59dccacef20149046a323a2ef339b32faaf16a58c0e3c238ae221e1f8fa7a439a46b0ce6a252ff9632a_1280.jpg'
+                                            })">
+                                                <i class="fas fa-plus"></i> Add
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Courses -->
+                <div class="menu-category mt-5" data-category="mains">
+                    <h3 class="text-secondary mb-4"><i class="fas fa-utensils"></i> Main Courses</h3>
+                    
+                    <!-- North Indian Section -->
+                    <h4 class="text-primary mb-3"><i class="fas fa-mountain"></i> North Indian</h4>
+                    <div class="row">
+                        <div class="col-lg-6 mb-4">
+                            <div class="menu-item">
+                                <div class="row align-items-center">
+                                    <div class="col-4">
+                                        <img src="https://pixabay.com/get/gbc827cfb024dbe195c0dac314fa098b17511422bca382e9310a68dadf9c5879e518367d4c3b0a1ce3a5ac5f7e958fbcb1f26335894477276de41574686a17f39_1280.jpg" 
+                                             class="img-fluid rounded" alt="Paneer Butter Masala">
+                                    </div>
+                                    <div class="col-8">
+                                        <h5>Paneer Butter Masala</h5>
+                                        <p class="text-muted small">Creamy tomato curry with soft cottage cheese</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="price">₹280</span>
+                                            <button class="btn btn-sm btn-primary" onclick="addToCart({
+                                                id: 'paneer-butter-masala',
+                                                type: 'food',
+                                                name: 'Paneer Butter Masala',
+                                                price: 280,
+                                                image: 'https://pixabay.com/get/gbc827cfb024dbe195c0dac314fa098b17511422bca382e9310a68dadf9c5879e518367d4c3b0a1ce3a5ac5f7e958fbcb1f26335894477276de41574686a17f39_1280.jpg'
+                                            })">
+                                                <i class="fas fa-plus"></i> Add
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-6 mb-4">
+                            <div class="menu-item">
+                                <div class="row align-items-center">
+                                    <div class="col-4">
+                                        <img src="https://pixabay.com/get/g7ba3235f178a90fffa504366e0ccda5092ebe48199c9c06d5029f8c2d251cfb6bcecd59f7ebcb3ad527d10164a2acdbfe31bae2640083e6f5744cde6ffbb4315_1280.jpg" 
+                                             class="img-fluid rounded" alt="Kadai Paneer">
+                                    </div>
+                                    <div class="col-8">
+                                        <h5>Kadai Paneer</h5>
+                                        <p class="text-muted small">Spicy paneer cooked with bell peppers and onions</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="price">₹270</span>
+                                            <button class="btn btn-sm btn-primary" onclick="addToCart({
+                                                id: 'kadai-paneer',
+                                                type: 'food',
+                                                name: 'Kadai Paneer',
+                                                price: 270,
+                                                image: 'https://pixabay.com/get/g7ba3235f178a90fffa504366e0ccda5092ebe48199c9c06d5029f8c2d251cfb6bcecd59f7ebcb3ad527d10164a2acdbfe31bae2640083e6f5744cde6ffbb4315_1280.jpg'
+                                            })">
+                                                <i class="fas fa-plus"></i> Add
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-6 mb-4">
+                            <div class="menu-item">
+                                <div class="row align-items-center">
+                                    <div class="col-4">
+                                        <img src="https://pixabay.com/get/g453a5239fd9bceb21c8ab46271b5200e44f9a61633fb8686d9026e750b97ec9807074d4b8bcf6f27deca6cf0ffda6ecb1bf316bae3a7f89b994febc3a07aa764_1280.jpg" 
+                                             class="img-fluid rounded" alt="Palak Paneer">
+                                    </div>
+                                    <div class="col-8">
+                                        <h5>Palak Paneer</h5>
+                                        <p class="text-muted small">Cottage cheese cooked in spinach gravy</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="price">₹260</span>
+                                            <button class="btn btn-sm btn-primary" onclick="addToCart({
+                                                id: 'palak-paneer',
+                                                type: 'food',
+                                                name: 'Palak Paneer',
+                                                price: 260,
+                                                image: 'https://pixabay.com/get/g453a5239fd9bceb21c8ab46271b5200e44f9a61633fb8686d9026e750b97ec9807074d4b8bcf6f27deca6cf0ffda6ecb1bf316bae3a7f89b994febc3a07aa764_1280.jpg'
+                                            })">
+                                                <i class="fas fa-plus"></i> Add
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-6 mb-4">
+                            <div class="menu-item">
+                                <div class="row align-items-center">
+                                    <div class="col-4">
+                                        <img src="https://pixabay.com/get/geafaca1400c32f462546ac7a663cface6c730398bb274efae533f9648bd2f0205c3292ec0bdd53a932dde68484f80ad9f2efdcf89dfa6acbcd8a4fa935b2aa37_1280.jpg" 
+                                             class="img-fluid rounded" alt="Chana Masala">
+                                    </div>
+                                    <div class="col-8">
+                                        <h5>Chana Masala</h5>
+                                        <p class="text-muted small">Spiced chickpeas in rich tomato gravy</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="price">₹200</span>
+                                            <button class="btn btn-sm btn-primary" onclick="addToCart({
+                                                id: 'chana-masala',
+                                                type: 'food',
+                                                name: 'Chana Masala',
+                                                price: 200,
+                                                image: 'https://pixabay.com/get/geafaca1400c32f462546ac7a663cface6c730398bb274efae533f9648bd2f0205c3292ec0bdd53a932dde68484f80ad9f2efdcf89dfa6acbcd8a4fa935b2aa37_1280.jpg'
+                                            })">
+                                                <i class="fas fa-plus"></i> Add
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-6 mb-4">
+                            <div class="menu-item">
+                                <div class="row align-items-center">
+                                    <div class="col-4">
+                                        <img src="https://pixabay.com/get/g6b4098552985a4254e1f477040cb00b58ebbcec2c31be6f2d236ef40f4b0b1bf51646b690628a922c8ef4467dce9b0cf74404619fe8d038bcd0b43066ce90d0a_1280.jpg" 
+                                             class="img-fluid rounded" alt="Dal Makhani">
+                                    </div>
+                                    <div class="col-8">
+                                        <h5>Dal Makhani</h5>
+                                        <p class="text-muted small">Creamy black lentils slow-cooked with butter</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="price">₹220</span>
+                                            <button class="btn btn-sm btn-primary" onclick="addToCart({
+                                                id: 'dal-makhani',
+                                                type: 'food',
+                                                name: 'Dal Makhani',
+                                                price: 220,
+                                                image: 'https://pixabay.com/get/g6b4098552985a4254e1f477040cb00b58ebbcec2c31be6f2d236ef40f4b0b1bf51646b690628a922c8ef4467dce9b0cf74404619fe8d038bcd0b43066ce90d0a_1280.jpg'
+                                            })">
+                                                <i class="fas fa-plus"></i> Add
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-6 mb-4">
+                            <div class="menu-item">
+                                <div class="row align-items-center">
+                                    <div class="col-4">
+                                        <img src="https://pixabay.com/get/g31e18c99eee37579066399cee2ed44a1db0a52bb1fdaae48dc05c615207197fe6a571ce9ee1bd3f50dfe5548abfbf81c9afb1b2c7540a0fa9299cd94e83882c0_1280.jpg" 
+                                             class="img-fluid rounded" alt="Rajma Masala">
+                                    </div>
+                                    <div class="col-8">
+                                        <h5>Rajma Masala</h5>
+                                        <p class="text-muted small">Red kidney beans in spiced tomato curry</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="price">₹190</span>
+                                            <button class="btn btn-sm btn-primary" onclick="addToCart({
+                                                id: 'rajma-masala',
+                                                type: 'food',
+                                                name: 'Rajma Masala',
+                                                price: 190,
+                                                image: 'https://pixabay.com/get/g31e18c99eee37579066399cee2ed44a1db0a52bb1fdaae48dc05c615207197fe6a571ce9ee1bd3f50dfe5548abfbf81c9afb1b2c7540a0fa9299cd94e83882c0_1280.jpg'
+                                            })">
+                                                <i class="fas fa-plus"></i> Add
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rice & Biryani Section -->
+                <div class="menu-category mt-5" data-category="mains">
+                    <h4 class="text-primary mb-3 mt-4"><i class="fas fa-seedling"></i> Rice & Biryani</h4>
+                    <div class="row">
+                        <div class="col-lg-6 mb-4">
+                            <div class="menu-item">
+                                <div class="row align-items-center">
+                                    <div class="col-4">
+                                        <img src="https://pixabay.com/get/g31e18c99eee37579066399cee2ed44a1db0a52bb1fdaae48dc05c615207197fe6a571ce9ee1bd3f50dfe5548abfbf81c9afb1b2c7540a0fa9299cd94e83882c0_1280.jpg" 
+                                             class="img-fluid rounded" alt="Veg Biryani">
+                                    </div>
+                                    <div class="col-8">
+                                        <h5>Veg Biryani</h5>
+                                        <p class="text-muted small">Aromatic basmati rice with mixed vegetables and spices</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="price">₹250</span>
+                                            <button class="btn btn-sm btn-primary" onclick="addToCart({
+                                                id: 'veg-biryani',
+                                                type: 'food',
+                                                name: 'Veg Biryani',
+                                                price: 250,
+                                                image: 'https://pixabay.com/get/g31e18c99eee37579066399cee2ed44a1db0a52bb1fdaae48dc05c615207197fe6a571ce9ee1bd3f50dfe5548abfbf81c9afb1b2c7540a0fa9299cd94e83882c0_1280.jpg'
+                                            })">
+                                                <i class="fas fa-plus"></i> Add
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-6 mb-4">
+                            <div class="menu-item">
+                                <div class="row align-items-center">
+                                    <div class="col-4">
+                                        <img src="https://pixabay.com/get/geafaca1400c32f462546ac7a663cface6c730398bb274efae533f9648bd2f0205c3292ec0bdd53a932dde68484f80ad9f2efdcf89dfa6acbcd8a4fa935b2aa37_1280.jpg" 
+                                             class="img-fluid rounded" alt="Jeera Rice">
+                                    </div>
+                                    <div class="col-8">
+                                        <h5>Jeera Rice</h5>
+                                        <p class="text-muted small">Fragrant cumin-flavored basmati rice</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="price">₹120</span>
+                                            <button class="btn btn-sm btn-primary" onclick="addToCart({
+                                                id: 'jeera-rice',
+                                                type: 'food',
+                                                name: 'Jeera Rice',
+                                                price: 120,
+                                                image: 'https://pixabay.com/get/geafaca1400c32f462546ac7a663cface6c730398bb274efae533f9648bd2f0205c3292ec0bdd53a932dde68484f80ad9f2efdcf89dfa6acbcd8a4fa935b2aa37_1280.jpg'
+                                            })">
+                                                <i class="fas fa-plus"></i> Add
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desserts -->
+                <div class="menu-category mt-5" data-category="desserts">
+                    <h3 class="text-secondary mb-4"><i class="fas fa-birthday-cake"></i> Desserts</h3>
+                    <div class="row">
+                        <div class="col-lg-6 mb-4">
+                            <div class="menu-item">
+                                <div class="row align-items-center">
+                                    <div class="col-4">
+                                        <img src="https://pixabay.com/get/g6b4098552985a4254e1f477040cb00b58ebbcec2c31be6f2d236ef40f4b0b1bf51646b690628a922c8ef4467dce9b0cf74404619fe8d038bcd0b43066ce90d0a_1280.jpg" 
+                                             class="img-fluid rounded" alt="Gulab Jamun">
+                                    </div>
+                                    <div class="col-8">
+                                        <h5>Gulab Jamun (2 pieces)</h5>
+                                        <p class="text-muted small">Sweet milk dumplings in sugar syrup</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="price">₹80</span>
+                                            <button class="btn btn-sm btn-primary" onclick="addToCart({
+                                                id: 'gulab-jamun',
+                                                type: 'food',
+                                                name: 'Gulab Jamun (2 pieces)',
+                                                price: 80,
+                                                image: 'https://pixabay.com/get/g6b4098552985a4254e1f477040cb00b58ebbcec2c31be6f2d236ef40f4b0b1bf51646b690628a922c8ef4467dce9b0cf74404619fe8d038bcd0b43066ce90d0a_1280.jpg'
+                                            })">
+                                                <i class="fas fa-plus"></i> Add
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-6 mb-4">
+                            <div class="menu-item">
+                                <div class="row align-items-center">
+                                    <div class="col-4">
+                                        <img src="https://pixabay.com/get/g453a5239fd9bceb21c8ab46271b5200e44f9a61633fb8686d9026e750b97ec9807074d4b8bcf6f27deca6cf0ffda6ecb1bf316bae3a7f89b994febc3a07aa764_1280.jpg" 
+                                             class="img-fluid rounded" alt="Rasgulla">
+                                    </div>
+                                    <div class="col-8">
+                                        <h5>Rasgulla (3 pieces)</h5>
+                                        <p class="text-muted small">Spongy cottage cheese balls in sugar syrup</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="price">₹90</span>
+                                            <button class="btn btn-sm btn-primary" onclick="addToCart({
+                                                id: 'rasgulla',
+                                                type: 'food',
+                                                name: 'Rasgulla (3 pieces)',
+                                                price: 90,
+                                                image: 'https://pixabay.com/get/g453a5239fd9bceb21c8ab46271b5200e44f9a61633fb8686d9026e750b97ec9807074d4b8bcf6f27deca6cf0ffda6ecb1bf316bae3a7f89b994febc3a07aa764_1280.jpg'
+                                            })">
+                                                <i class="fas fa-plus"></i> Add
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-6 mb-4">
+                            <div class="menu-item">
+                                <div class="row align-items-center">
+                                    <div class="col-4">
+                                        <img src="https://pixabay.com/get/gbc827cfb024dbe195c0dac314fa098b17511422bca382e9310a68dadf9c5879e518367d4c3b0a1ce3a5ac5f7e958fbcb1f26335894477276de41574686a17f39_1280.jpg" 
+                                             class="img-fluid rounded" alt="Rasmalai">
+                                    </div>
+                                    <div class="col-8">
+                                        <h5>Rasmalai (2 pieces)</h5>
+                                        <p class="text-muted small">Cottage cheese patties in sweetened milk</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="price">₹110</span>
+                                            <button class="btn btn-sm btn-primary" onclick="addToCart({
+                                                id: 'rasmalai',
+                                                type: 'food',
+                                                name: 'Rasmalai (2 pieces)',
+                                                price: 110,
+                                                image: 'https://pixabay.com/get/gbc827cfb024dbe195c0dac314fa098b17511422bca382e9310a68dadf9c5879e518367d4c3b0a1ce3a5ac5f7e958fbcb1f26335894477276de41574686a17f39_1280.jpg'
+                                            })">
+                                                <i class="fas fa-plus"></i> Add
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-6 mb-4">
+                            <div class="menu-item">
+                                <div class="row align-items-center">
+                                    <div class="col-4">
+                                        <img src="https://pixabay.com/get/geafaca1400c32f462546ac7a663cface6c730398bb274efae533f9648bd2f0205c3292ec0bdd53a932dde68484f80ad9f2efdcf89dfa6acbcd8a4fa935b2aa37_1280.jpg" 
+                                             class="img-fluid rounded" alt="Kulfi">
+                                    </div>
+                                    <div class="col-8">
+                                        <h5>Kulfi</h5>
+                                        <p class="text-muted small">Traditional Indian ice cream with cardamom</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="price">₹60</span>
+                                            <button class="btn btn-sm btn-primary" onclick="addToCart({
+                                                id: 'kulfi',
+                                                type: 'food',
+                                                name: 'Kulfi',
+                                                price: 60,
+                                                image: 'https://pixabay.com/get/geafaca1400c32f462546ac7a663cface6c730398bb274efae533f9648bd2f0205c3292ec0bdd53a932dde68484f80ad9f2efdcf89dfa6acbcd8a4fa935b2aa37_1280.jpg'
+                                            })">
+                                                <i class="fas fa-plus"></i> Add
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Beverages -->
+                <div class="menu-category mt-5" data-category="beverages">
+                    <h3 class="text-secondary mb-4"><i class="fas fa-coffee"></i> Beverages</h3>
+                    <div class="row">
+                        <div class="col-lg-6 mb-4">
+                            <div class="menu-item">
+                                <div class="row align-items-center">
+                                    <div class="col-4">
+                                        <img src="https://pixabay.com/get/g6b4098552985a4254e1f477040cb00b58ebbcec2c31be6f2d236ef40f4b0b1bf51646b690628a922c8ef4467dce9b0cf74404619fe8d038bcd0b43066ce90d0a_1280.jpg" 
+                                             class="img-fluid rounded" alt="Masala Chai">
+                                    </div>
+                                    <div class="col-8">
+                                        <h5>Masala Chai</h5>
+                                        <p class="text-muted small">Traditional spiced Indian tea</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="price">₹30</span>
+                                            <button class="btn btn-sm btn-primary" onclick="addToCart({
+                                                id: 'masala-chai',
+                                                type: 'food',
+                                                name: 'Masala Chai',
+                                                price: 30,
+                                                image: 'https://pixabay.com/get/g6b4098552985a4254e1f477040cb00b58ebbcec2c31be6f2d236ef40f4b0b1bf51646b690628a922c8ef4467dce9b0cf74404619fe8d038bcd0b43066ce90d0a_1280.jpg'
+                                            })">
+                                                <i class="fas fa-plus"></i> Add
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-6 mb-4">
+                            <div class="menu-item">
+                                <div class="row align-items-center">
+                                    <div class="col-4">
+                                        <img src="https://pixabay.com/get/g453a5239fd9bceb21c8ab46271b5200e44f9a61633fb8686d9026e750b97ec9807074d4b8bcf6f27deca6cf0ffda6ecb1bf316bae3a7f89b994febc3a07aa764_1280.jpg" 
+                                             class="img-fluid rounded" alt="Mango Lassi">
+                                    </div>
+                                    <div class="col-8">
+                                        <h5>Mango Lassi</h5>
+                                        <p class="text-muted small">Refreshing yogurt drink with mango</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="price">₹80</span>
+                                            <button class="btn btn-sm btn-primary" onclick="addToCart({
+                                                id: 'mango-lassi',
+                                                type: 'food',
+                                                name: 'Mango Lassi',
+                                                price: 80,
+                                                image: 'https://pixabay.com/get/g453a5239fd9bceb21c8ab46271b5200e44f9a61633fb8686d9026e750b97ec9807074d4b8bcf6f27deca6cf0ffda6ecb1bf316bae3a7f89b994febc3a07aa764_1280.jpg'
+                                            })">
+                                                <i class="fas fa-plus"></i> Add
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-6 mb-4">
+                            <div class="menu-item">
+                                <div class="row align-items-center">
+                                    <div class="col-4">
+                                        <img src="https://pixabay.com/get/gbc827cfb024dbe195c0dac314fa098b17511422bca382e9310a68dadf9c5879e518367d4c3b0a1ce3a5ac5f7e958fbcb1f26335894477276de41574686a17f39_1280.jpg" 
+                                             class="img-fluid rounded" alt="Fresh Lime Soda">
+                                    </div>
+                                    <div class="col-8">
+                                        <h5>Fresh Lime Soda</h5>
+                                        <p class="text-muted small">Refreshing lime soda with mint</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="price">₹50</span>
+                                            <button class="btn btn-sm btn-primary" onclick="addToCart({
+                                                id: 'lime-soda',
+                                                type: 'food',
+                                                name: 'Fresh Lime Soda',
+                                                price: 50,
+                                                image: 'https://pixabay.com/get/gbc827cfb024dbe195c0dac314fa098b17511422bca382e9310a68dadf9c5879e518367d4c3b0a1ce3a5ac5f7e958fbcb1f26335894477276de41574686a17f39_1280.jpg'
+                                            })">
+                                                <i class="fas fa-plus"></i> Add
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-6 mb-4">
+                            <div class="menu-item">
+                                <div class="row align-items-center">
+                                    <div class="col-4">
+                                        <img src="https://pixabay.com/get/geafaca1400c32f462546ac7a663cface6c730398bb274efae533f9648bd2f0205c3292ec0bdd53a932dde68484f80ad9f2efdcf89dfa6acbcd8a4fa935b2aa37_1280.jpg" 
+                                             class="img-fluid rounded" alt="Filter Coffee">
+                                    </div>
+                                    <div class="col-8">
+                                        <h5>Filter Coffee</h5>
+                                        <p class="text-muted small">South Indian style filtered coffee</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="price">₹40</span>
+                                            <button class="btn btn-sm btn-primary" onclick="addToCart({
+                                                id: 'filter-coffee',
+                                                type: 'food',
+                                                name: 'Filter Coffee',
+                                                price: 40,
+                                                image: 'https://pixabay.com/get/geafaca1400c32f462546ac7a663cface6c730398bb274efae533f9648bd2f0205c3292ec0bdd53a932dde68484f80ad9f2efdcf89dfa6acbcd8a4fa935b2aa37_1280.jpg'
+                                            })">
+                                                <i class="fas fa-plus"></i> Add
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5><i class="fas fa-hotel"></i> Hotel Hakaji</h5>
+                    <p>Experience authentic Indian hospitality with modern amenities. Your comfort is our priority.</p>
+                    <div class="social-links">
+                        <a href="#" class="me-3"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="rooms.html">Rooms</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="about.html">About & Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <h5>Contact Info</h5>
+                    <p>
+                        <i class="fas fa-map-marker-alt"></i>
+                        Hotel Hakaji, near Aiya Nagar,<br>
+                        Mundra Road, Bhuj, Kachchh, Gujarat
+                    </p>
+                    <p>
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+919876543210">+91 98765 43210</a>
+                    </p>
+                    <p>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@hotelhakaji.com">info@hotelhakaji.com</a>
+                    </p>
+                </div>
+            </div>
+            
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 Hotel Hakaji. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p>Designed with <i class="fas fa-heart text-danger"></i> for hospitality</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="static/js/main.js"></script>
+    <script src="static/js/cart.js"></script>
+    <script src="static/js/booking.js"></script>
+    <script src="static/js/gallery.js"></script>
+    
+    <script>
+    // Menu filtering functionality
+    function filterMenu(category) {
+        // Update active button
+        document.querySelectorAll('.btn-group .btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        event.target.classList.add('active');
+        
+        // Show/hide menu categories
+        document.querySelectorAll('.menu-category').forEach(section => {
+            if (category === 'all' || section.dataset.category === category) {
+                section.style.display = 'block';
+            } else {
+                section.style.display = 'none';
+            }
+        });
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us & Contact - Hotel Hakaji</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-hotel"></i> Hotel Hakaji
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">
+                            <i class="fas fa-utensils"></i> Menu
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rooms.html">
+                            <i class="fas fa-bed"></i> Rooms
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">
+                            <i class="fas fa-images"></i> Gallery
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="reviews.html">
+                            <i class="fas fa-star"></i> Reviews
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">
+                            <i class="fas fa-info-circle"></i> About
+                        </a>
+                    </li>
+                </ul>
+                
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link position-relative" href="cart.html">
+                            <i class="fas fa-shopping-cart"></i> Cart
+                            <span class="badge bg-danger rounded-pill position-absolute top-0 start-100 translate-middle" id="cart-count" style="display: none;">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div style="margin-top: 80px;"></div>
+
+    <!-- About Header -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center">
+                <h1 class="display-4 text-secondary mb-3">About Hotel Hakaji</h1>
+                <p class="lead">Discover our story, heritage, and commitment to exceptional hospitality</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="display-5 text-secondary mb-4">Our Story</h2>
+                    <p class="lead">
+                        Established in 1995, Hotel Hakaji has been a beacon of authentic Indian hospitality in the heart of Bhuj, Kachchh. 
+                        Named after the legendary Hakaji, a revered figure in local folklore known for his generosity and warmth, 
+                        our hotel embodies the timeless values of Gujarati culture.
+                    </p>
+                    <p>
+                        Located strategically near Aiya Nagar on Mundra Road, we serve as the perfect gateway to explore the rich 
+                        cultural heritage of Kachchh, including its famous handicrafts, traditional architecture, and the pristine 
+                        beauty of the Rann of Kachchh. Our commitment to preserving local traditions while providing modern comforts 
+                        has made us a preferred destination for travelers seeking an authentic Gujarati experience.
+                    </p>
+                    <p>
+                        Over the years, we have welcomed thousands of guests from around the world, each carrying with them memories 
+                        of our warm hospitality, traditional cuisine, and the genuine care that defines the Hakaji experience.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://pixabay.com/get/gb90aeeebda397d99af737bedf7345a6597edbf11bef94bde3a47e1ce60a38f839af555074f155ed2278f99dd4923c834579cf91fccb7e94bd1dc9bbe91acc989_1280.jpg" 
+                         alt="Hotel Hakaji Heritage" 
+                         class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 text-secondary">Our Values</h2>
+                <p class="lead">The principles that guide everything we do</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="text-center">
+                        <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
+                             style="width: 80px; height: 80px;">
+                            <i class="fas fa-heart fa-2x"></i>
+                        </div>
+                        <h4>Atithi Devo Bhava</h4>
+                        <p>
+                            "Guest is God" - This ancient Sanskrit principle is at the core of our service philosophy. 
+                            Every guest is treated with utmost respect, care, and devotion.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <div class="text-center">
+                        <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
+                             style="width: 80px; height: 80px;">
+                            <i class="fas fa-leaf fa-2x"></i>
+                        </div>
+                        <h4>Sustainability</h4>
+                        <p>
+                            We are committed to preserving the natural beauty of Kachchh through eco-friendly practices 
+                            and sustainable tourism initiatives.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <div class="text-center">
+                        <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
+                             style="width: 80px; height: 80px;">
+                            <i class="fas fa-users fa-2x"></i>
+                        </div>
+                        <h4>Community</h4>
+                        <p>
+                            We actively support local artisans, farmers, and communities, helping preserve traditional 
+                            crafts and creating sustainable livelihoods.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 text-secondary">Meet Our Team</h2>
+                <p class="lead">The dedicated professionals who make your stay memorable</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
+                                 style="width: 100px; height: 100px;">
+                                <i class="fas fa-user-tie fa-3x"></i>
+                            </div>
+                            <h5 class="card-title">Mr. Hakaji</h5>
+                            <p class="text-muted">Owner</p>
+                            <p class="card-text">
+                                Visionary founder and owner of Hotel Hakaji with 25+ years of experience in hospitality. 
+                                Passionate about preserving Gujarati culture and traditions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
+                                 style="width: 100px; height: 100px;">
+                                <i class="fas fa-chef-hat fa-3x"></i>
+                            </div>
+                            <h5 class="card-title">Chef Meera Patel</h5>
+                            <p class="text-muted">Executive Chef</p>
+                            <p class="card-text">
+                                Award-winning chef specializing in authentic Gujarati cuisine. Known for her innovative 
+                                approach to traditional recipes using local ingredients.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
+                                 style="width: 100px; height: 100px;">
+                                <i class="fas fa-concierge-bell fa-3x"></i>
+                            </div>
+                            <h5 class="card-title">Amit Sharma</h5>
+                            <p class="text-muted">Guest Relations Manager</p>
+                            <p class="card-text">
+                                Expert in local tourism with extensive knowledge of Kachchh's attractions. 
+                                Dedicated to creating personalized experiences for every guest.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 text-secondary">Contact Us</h2>
+                <p class="lead">We're here to help you plan your perfect stay</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-8 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                <i class="fas fa-envelope"></i> Send us a Message
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <form id="contactForm" onsubmit="handleContactForm(event)">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="contactName" class="form-label">Full Name</label>
+                                        <input type="text" class="form-control" id="contactName" name="name" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="contactEmail" class="form-label">Email Address</label>
+                                        <input type="email" class="form-control" id="contactEmail" name="email" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="contactPhone" class="form-label">Phone Number</label>
+                                        <input type="tel" class="form-control" id="contactPhone" name="phone">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="contactSubject" class="form-label">Subject</label>
+                                        <select class="form-control" id="contactSubject" name="subject" required>
+                                            <option value="">Select Subject</option>
+                                            <option value="reservation">Room Reservation</option>
+                                            <option value="event">Event Booking</option>
+                                            <option value="complaint">Complaint</option>
+                                            <option value="feedback">Feedback</option>
+                                            <option value="general">General Inquiry</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="contactMessage" class="form-label">Message</label>
+                                    <textarea class="form-control" id="contactMessage" name="message" rows="4" 
+                                              placeholder="How can we help you?" required></textarea>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="agreeTerms" required>
+                                        <label class="form-check-label" for="agreeTerms">
+                                            I agree to the privacy policy and terms of service
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-paper-plane"></i> Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                <i class="fas fa-map-marker-alt"></i> Contact Information
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-4">
+                                <h6 class="text-primary">Address</h6>
+                                <p class="mb-2">
+                                    <i class="fas fa-building"></i>
+                                    Hotel Hakaji<br>
+                                    Near Aiya Nagar<br>
+                                    Mundra Road, Bhuj<br>
+                                    Kachchh, Gujarat 370001<br>
+                                    India
+                                </p>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h6 class="text-primary">Phone Numbers</h6>
+                                <p class="mb-1">
+                                    <i class="fas fa-phone"></i>
+                                    <a href="tel:+919876543210">+91 98765 43210</a>
+                                </p>
+                                <p class="mb-1">
+                                    <i class="fas fa-phone-alt"></i>
+                                    <a href="tel:+912832251234">+91 2832 251234</a>
+                                </p>
+                                <p class="mb-2">
+                                    <i class="fas fa-fax"></i>
+                                    +91 2832 251235 (Fax)
+                                </p>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h6 class="text-primary">Email</h6>
+                                <p class="mb-1">
+                                    <i class="fas fa-envelope"></i>
+                                    <a href="mailto:info@hotelhakaji.com">info@hotelhakaji.com</a>
+                                </p>
+                                <p class="mb-1">
+                                    <i class="fas fa-envelope"></i>
+                                    <a href="mailto:reservations@hotelhakaji.com">reservations@hotelhakaji.com</a>
+                                </p>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h6 class="text-primary">Business Hours</h6>
+                                <p class="mb-1">
+                                    <i class="fas fa-clock"></i>
+                                    Reception: 24/7
+                                </p>
+                                <p class="mb-1">
+                                    <i class="fas fa-clock"></i>
+                                    Restaurant: 6:00 AM - 11:00 PM
+                                </p>
+                                <p class="mb-1">
+                                    <i class="fas fa-clock"></i>
+                                    Pool: 6:00 AM - 10:00 PM
+                                </p>
+                            </div>
+                            
+                            <div>
+                                <h6 class="text-primary">Follow Us</h6>
+                                <div class="social-links">
+                                    <a href="#" class="btn btn-outline-primary btn-sm me-2 mb-2">
+                                        <i class="fab fa-facebook"></i> Facebook
+                                    </a>
+                                    <a href="#" class="btn btn-outline-primary btn-sm me-2 mb-2">
+                                        <i class="fab fa-instagram"></i> Instagram
+                                    </a>
+                                    <a href="#" class="btn btn-outline-primary btn-sm me-2 mb-2">
+                                        <i class="fab fa-twitter"></i> Twitter
+                                    </a>
+                                    <a href="#" class="btn btn-outline-primary btn-sm mb-2">
+                                        <i class="fab fa-youtube"></i> YouTube
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 text-secondary">Find Us</h2>
+                <p class="lead">Located in the heart of Bhuj, Kachchh</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="bg-light p-5 text-center rounded">
+                                <i class="fas fa-map-marked-alt fa-3x text-primary mb-3"></i>
+                                <h5>Interactive Map</h5>
+                                <p class="text-muted">
+                                    Hotel Hakaji is conveniently located near Aiya Nagar on Mundra Road, 
+                                    providing easy access to Bhuj's main attractions and the beautiful Rann of Kachchh.
+                                </p>
+                                <div class="mt-3">
+                                    <a href="https://maps.google.com/?q=Hotel+Hakaji+Bhuj+Kachchh+Gujarat" 
+                                       target="_blank" class="btn btn-primary">
+                                        <i class="fas fa-external-link-alt"></i> Open in Google Maps
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5><i class="fas fa-hotel"></i> Hotel Hakaji</h5>
+                    <p>Experience authentic Indian hospitality with modern amenities. Your comfort is our priority.</p>
+                    <div class="social-links">
+                        <a href="#" class="me-3"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="rooms.html">Rooms</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="about.html">About & Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <h5>Contact Info</h5>
+                    <p>
+                        <i class="fas fa-map-marker-alt"></i>
+                        Hotel Hakaji, near Aiya Nagar,<br>
+                        Mundra Road, Bhuj, Kachchh, Gujarat
+                    </p>
+                    <p>
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+919876543210">+91 98765 43210</a>
+                    </p>
+                    <p>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@hotelhakaji.com">info@hotelhakaji.com</a>
+                    </p>
+                </div>
+            </div>
+            
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 Hotel Hakaji. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p>Designed with <i class="fas fa-heart text-danger"></i> for hospitality</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="static/js/main.js"></script>
+    <script src="static/js/cart.js"></script>
+    <script src="static/js/booking.js"></script>
+    <script src="static/js/gallery.js"></script>
+</body>
+</html>
